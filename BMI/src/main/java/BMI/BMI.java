@@ -58,8 +58,7 @@ public class BMI extends HttpServlet {
         float CanNang = Float.parseFloat(request.getParameter("kg"));
         float ChieuCao = Float.parseFloat(request.getParameter("cm"));
         PrintWriter traVe = response.getWriter();
-        traVe.append("<div><h1>Bạn vừa gửi yêu cầu  tính BMI đây là kết quả:</h1></div>");
-        System.out.print(tinh(CanNang,ChieuCao));
+        traVe.append("<div><h1>Bạn vừa gửi yêu cầu tính BMI đây là kết quả:</h1></div>");
         traVe.append(tinh(CanNang,ChieuCao));
     }
 
