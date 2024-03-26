@@ -29,9 +29,9 @@ public class SinhVienController {
     }
 
     @PutMapping("/{id}")
-    public SinhVien updateSinhVien(@PathVariable Long MSSV, @RequestBody SinhVien SinhVienDetails) {
-    	SinhVien sinhvien = SinhVienRepository.findByMSSV(MSSV)
-                .orElseThrow(() -> new RuntimeException("SinhVien không tìm thấy với MSSV: " + id));
+    public SinhVien updateSinhVien(@PathVariable Long mssv, @RequestBody SinhVien SinhVienDetails) {
+    	SinhVien sinhvien = SinhVienRepository.findByMssv(mssv)
+                .orElseThrow(() -> new RuntimeException("SinhVien không tìm thấy với MSSV: " + mssv));
 
         sinhvien.setHo(SinhVienDetails.getHo());
         sinhvien.setTen(SinhVienDetails.getTen());
@@ -39,10 +39,10 @@ public class SinhVienController {
         sinhvien.setKhoa(SinhVienDetails.getKhoa());
         sinhvien.setTruong(SinhVienDetails.getTruong());
         
-        return SinhVienRepository.save(sinhvien);
+        return sinhvienRepository.save(sinhvien);
     }
     @DeleteMapping("/{id}")
-    public void deleteStudent(@PathVariable Long MSSV) {
-    	SinhVienRepository.deleteByMSSV(MSSV);
+    public void deleteStudent(@PathVariable Long mssv) {
+    	SinhVienRepository.deleteByMssv(mssv);
     }
 }

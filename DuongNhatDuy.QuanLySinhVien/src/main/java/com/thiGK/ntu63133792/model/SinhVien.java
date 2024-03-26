@@ -9,17 +9,17 @@ public class SinhVien {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long MSSV;
+    private Long mssv;
     private String ho;
     private String ten;
     private String lop;
     private String khoa;
     private String truong;
-	public Long getMSSV() {
-		return MSSV;
+	public Long getMssv() {
+		return mssv;
 	}
-	public void setMSSV(Long mSSV) {
-		MSSV = mSSV;
+	public void setMssv(Long mssv) {
+		this.mssv = mssv;
 	}
 	public String getHo() {
 		return ho;
@@ -51,9 +51,9 @@ public class SinhVien {
 	public void setTruong(String truong) {
 		this.truong = truong;
 	}
-	public SinhVien(Long mSSV, String ho, String ten, String lop, String khoa, String truong) {
+	public SinhVien(Long mssv, String ho, String ten, String lop, String khoa, String truong) {
 		super();
-		MSSV = mSSV;
+		this.mssv = mssv;
 		this.ho = ho;
 		this.ten = ten;
 		this.lop = lop;
@@ -62,7 +62,7 @@ public class SinhVien {
 	}
 	@Override
 	public String toString() {
-		return "SinhVien [MSSV=" + MSSV + ", ho=" + ho + ", ten=" + ten + ", lop=" + lop + ", khoa=" + khoa
+		return "SinhVien [MSSV=" + mssv + ", ho=" + ho + ", ten=" + ten + ", lop=" + lop + ", khoa=" + khoa
 				+ ", truong=" + truong + "]";
 	}
 	
